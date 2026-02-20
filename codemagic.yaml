@@ -7,15 +7,20 @@ workflows:
         JAVA_VERSION: "17"
       android:
         sdk: "34"
+
     scripts:
       - name: Clean project
-        script: ./gradlew clean
+        script: |
+          chmod +x ./gradlew
+          ./gradlew clean
 
       - name: Build Release APK
-        script: ./gradlew assembleRelease
+        script: |
+          ./gradlew assembleRelease
 
       - name: Build Release AAB
-        script: ./gradlew bundleRelease
+        script: |
+          ./gradlew bundleRelease
 
     artifacts:
       - app/build/outputs/**/*.apk
@@ -24,30 +29,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - "itdesk@gmail.com"workflows:
-  android-build:
-    name: Build Dashashrimali Android App
-    max_build_duration: 60
-    environment:
-      vars:
-        JAVA_VERSION: "17"
-      android:
-        sdk: "34"
-    scripts:
-      - name: Clean project
-        script: ./gradlew clean
-
-      - name: Build Release APK
-        script: ./gradlew assembleRelease
-
-      - name: Build Release AAB
-        script: ./gradlew bundleRelease
-
-    artifacts:
-      - app/build/outputs/**/*.apk
-      - app/build/outputs/**/*.aab
-
-    publishing:
-      email:
-        recipients:
-          - "itdesk@gmail.com"
+          - "itdesksolutionsllp@gmail.com"
