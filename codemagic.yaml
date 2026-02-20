@@ -5,8 +5,6 @@ workflows:
     environment:
       vars:
         JAVA_VERSION: "17"
-      android:
-        sdk: "34"
 
     scripts:
       - name: Clean project
@@ -29,4 +27,5 @@ workflows:
     publishing:
       email:
         recipients:
+
           - "itdesksolutionsllp@gmail.com"
